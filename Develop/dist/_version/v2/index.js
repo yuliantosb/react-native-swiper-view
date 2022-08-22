@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { Animated, ScrollView, View } from 'react-native';
 import Tabs from './components/Tabs';
 import { WIDTH } from './constants';
@@ -29,11 +29,11 @@ export default function SwiperView(_a) {
             }
         }
     };
-    var onTabPress = function (index) {
+    var onTabPress = useCallback(function (index) {
         var _a;
         moveHeaderScroll(index);
         (_a = scrollRef.current) === null || _a === void 0 ? void 0 : _a.scrollTo({ x: index * WIDTH, y: 0 });
-    };
+    }, []);
     return (<View style={styles.container}>
       <View style={[
         styles.tabHeader,
@@ -49,9 +49,7 @@ export default function SwiperView(_a) {
         var moveIndex = Math.floor(scrollX / WIDTH + 0.5);
         moveHeaderScroll(moveIndex);
     }}>
-        {tabList.map(function (tab, i) { return (<View key={i} style={{
-        width: WIDTH,
-    }}>
+        {tabList.map(function (tab, i) { return (<View key={i} style={{ width: WIDTH }}>
             {tab.component}
           </View>); })}
       </ScrollView>

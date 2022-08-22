@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback, useRef, useState } from 'react';
+import React, { ReactElement, useRef, useState } from 'react';
 import { Animated, ScrollView, View } from 'react-native';
 import Tabs from './components/Tabs';
 import { WIDTH } from './constants';
@@ -118,8 +118,8 @@ export default function SwiperView({
             key={i}
             style={{
               width: WIDTH,
-              justifyContent: 'center',
-              alignItems: 'center',
+              // justifyContent: 'center',
+              // alignItems: 'center',
             }}>
             {tab.component}
           </View>

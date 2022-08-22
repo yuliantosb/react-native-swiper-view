@@ -8,7 +8,7 @@ var styles = StyleSheet.create({
         position: 'relative',
         height: 50,
         width: '100%',
-        backgroundColor: '#fff',
+        backgroundColor: '#f57791',
     },
     tabScrollContainer: {
         flexDirection: 'column',
